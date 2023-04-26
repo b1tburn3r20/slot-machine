@@ -1,6 +1,5 @@
-//constants
-spin = 1s
-const items = {
+ //constants
+ const items = {
     '🔥':50,
     '☄️':100,
     '🍄':200,
@@ -12,32 +11,40 @@ const items = {
     '🦧':-200    
 }
 //cached items
-spinBtn = document.getElementsByClassName('spin-button')
+spinBtn = document.getElementById('spinBtn')
 slots = document.querySelectorAll('.slot')
 //event listeners
-spinBtn.addEventListner('click', luckySpin)
+spinBtn.addEventListener('click', luckySpin)
 //state variables
-doors = [[items],[items],[items]]
-win = win()
+score = 0
+// doors = [[items],[items],[items]]
+// win = win()
 //functions
 function luckySpin(){
-    setTimeout((spin), 1000);
-      
+    setTimeout(spin, 200);
+    console.log('luckyspin')
+
 }
 function spin() {
+    console.log('spintop')
     for(const slot of slots){
         const emojis = Object.keys(items)
         const randomIndex = Math.floor(Math.random()*emojis.length)
         const randomEmoji = emojis[randomIndex]
-        slots.innerText = randomEmoji
+        slot.innerText = randomEmoji   
+        console.log('spinend')
+
     }
+    checkWin()
   }
   
-  setInterval(spin, 100);
   
 function checkWin(){
-    if((doors[1]===doors[2]) && (doors[2]===doors[3])){
-        const item = doors[1];
+    console.log('checkwin')
+
+    if((slots[1].innerText ===slots[2].innerText) && (slots[2].innerText===slots[3].innerText)){
+        const item = slots[1];
         score += items[item];
+        alert('You Won!')
     }
 }

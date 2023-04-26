@@ -1,18 +1,19 @@
- //constants
- const items = {
+//constants
+const items = {
     '🔥':50,
     '☄️':100,
-    '🍄':200,
-    '❄️':250,
-    '🍓':275,
-    '🍒':300,
-    '🍭':500,
-    '🎰':1000,
+    // '🍄':200,
+    // '❄️':250,
+    // '🍓':275,
+    // '🍒':300,
+    // '🍭':500,
+    // '🎰':1000,
     '🦧':-200    
 }
 //cached items
 spinBtn = document.getElementById('spinBtn')
 slots = document.querySelectorAll('.slot')
+scoreDisplay = document.querySelector('.score')
 //event listeners
 spinBtn.addEventListener('click', luckySpin)
 //state variables
@@ -21,7 +22,7 @@ score = 0
 // win = win()
 //functions
 function luckySpin(){
-    setTimeout(spin, 200);
+    setTimeout(spin, 10);
     console.log('luckyspin')
 
 }
@@ -40,11 +41,18 @@ function spin() {
   
   
 function checkWin(){
-    console.log('checkwin')
-
-    if((slots[1].innerText ===slots[2].innerText) && (slots[2].innerText===slots[3].innerText)){
-        const item = slots[1];
+    console.log('checkloss')
+    if((slots[0].innerText ===slots[1].innerText) && (slots[1].innerText===slots[2].innerText) && (slots[1].innerText==='🦧')){
+        const item = slots[1].innerText;
         score += items[item];
+        scoreDisplay.innerText = `Money : $${score}`; 
+        alert('You LOST 200 points!')
+    }
+
+    else if((slots[0].innerText ===slots[1].innerText) && (slots[1].innerText===slots[2].innerText)){
+        const item = slots[1].innerText;
+        score += items[item];
+        scoreDisplay.innerText = `Money : $${score}`; 
         alert('You Won!')
     }
 }

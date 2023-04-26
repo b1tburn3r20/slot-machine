@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>Slot Machine</title>
   </head>
   <body>
     <div class="slot-machine">
+      <div class="score">Money: $10</div>
       <div class="slots-container">
-        <div id="slot1" class="slot"></div>
-        <div id="slot2" class="slot"></div>
-        <div id="slot3" class="slot"></div>
+        <div class="slot">7</div>
+        <div class="slot">7</div>
+        <div class="slot">7</div>
       </div>
-      <button class="spin-button">🎰 Spin! 🎰</button>
+      <button id="spinBtn" class="spin-button">🎰 Spin! 🎰</button>
     </div>
   </body>
 </html>

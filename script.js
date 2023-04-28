@@ -1,12 +1,7 @@
 //constants
 const items = {
     '🔥':50,
-    '☄️':100,
-    // '🍄':200,
-    // '❄️':250,
-    // '🍓':275,
-    // '🍒':300,
-    // '🍭':500,
+    '🍋':100,
     '🎰':1000,
     '🦧':-200    
 }
@@ -17,11 +12,10 @@ scoreDisplay = document.querySelector('.score')
 //event listeners
 spinBtn.addEventListener('click', luckySpin)
 //state variables
-score = 0
-// doors = [[items],[items],[items]]
-// win = win()
-//functions
+score = 20
 function luckySpin(){
+    score -= 2;
+    scoreDisplay.innerText = `Money: $${score}`;
     setTimeout(spin, 10);
     console.log('luckyspin')
 

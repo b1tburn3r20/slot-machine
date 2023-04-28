@@ -1,7 +1,8 @@
 :root {
-  --primary-color: #2980b9;
-  --secondary-color: #2c3e50;
-  --tertiary-color: #3498db;
+  --primary-color: #ff5733;
+  --secondary-color: #ffc300;
+  --tertiary-color: #e71d36;
+  --fourth-color: #fac42f;
   --base-font-size: 1.5rem;
 }
 
@@ -46,8 +47,17 @@ body {
   font-size: 1.6rem;
 }
 
+.score {
+  color: white;
+  margin: 0.5rem;
+  border-radius: 15px;
+  border: 2px solid var(--secondary-color);
+  padding: 5px;
+  background-color: var(--primary-color);
+}
+
 .spin-button {
-  background-color: #29b061;
+  background-color: var(--fourth-color);
   border: none;
   color: white;
   padding: 1rem 2rem;
@@ -58,4 +68,15 @@ body {
   margin: 1.5rem 0.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.spin-button:hover {
+  background-color: orange;
+  transform: scale(1.1);
+}
+
+.spin-button:active {
+  background-color: greenyellow;
+  color: white;
 }

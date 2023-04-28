@@ -1,18 +1,36 @@
 //constants
+
+
 const items = {
     '🔥':50,
     '🍋':100,
     '🎰':1000,
     '🦧':-200    
 }
+
+
 //cached items
+
+
 spinBtn = document.getElementById('spinBtn')
 slots = document.querySelectorAll('.slot')
 scoreDisplay = document.querySelector('.score')
+
+
 //event listeners
+
+
 spinBtn.addEventListener('click', luckySpin)
+
+
 //state variables
+
+
 score = 20
+
+//functions
+
+
 function luckySpin(){
     scoreDisplay.innerText = `Money: $${score}`;
     if(score <= 0){

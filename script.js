@@ -14,9 +14,13 @@ spinBtn.addEventListener('click', luckySpin)
 //state variables
 score = 20
 function luckySpin(){
-    score -= 2;
     scoreDisplay.innerText = `Money: $${score}`;
-    setTimeout(spin, 10);
+    if(score <= 0){
+        alert(`You're broke. Make this a lesson to not gamble.`)
+    return
+    }
+    score -= 2;
+    setTimeout(spin, 1);
     console.log('luckyspin')
 
 }
